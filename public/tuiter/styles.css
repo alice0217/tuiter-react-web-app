@@ -1,0 +1,87 @@
+body {
+    font-family: Helvetica;
+}
+
+.wd-fg-pink {
+    color: #E0245E;
+}
+
+.wd-fg-twitter-blue {
+    color: #1da1f2;
+}
+
+.wd-bg-twitter-blue {
+    background-color: #1da1f2;
+}
+
+.wd-fg-twitter-black {
+    color: #14171A;
+}
+
+.wd-bg-twitter-black {
+    background-color: #14171A;
+}
+
+.wd-fg-dark-grey {
+    color: #657786;
+}
+
+.wd-bg-dark-grey {
+    background-color: #657786;
+}
+
+.wd-fg-light-grey {
+    color: #AAB8C2;
+}
+
+.wd-bg-light-grey {
+    background-color: #AAB8C2;
+}
+
+.wd-fg-xlight-grey {
+    color: #E1E8ED;
+}
+
+.wd-bg-xlight-grey {
+    background-color: #E1E8ED;
+}
+
+.wd-fg-xxlight-grey {
+    color: #F5F8FA;
+}
+
+.wd-bg-xxlight-grey {
+    background-color: #F5F8FA;
+}
+
+.wd-no-left-padding {
+    padding-left: 0;
+}
+
+.wd-no-right-padding {
+    padding-right: 0;
+}
+
+.wd-no-lr-padding {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.wd-padding-around-half-1 {
+    padding: 0.5rem;
+}
+
+.wd-padding-around-1 {
+    padding: 1rem;
+}
+
+.wd-half-round-border {
+    border-radius: 25%;
+}
+
+.wd-bottom-left {
+    position: absolute;
+    bottom: 0rem;
+    left: 1rem;
+}
+

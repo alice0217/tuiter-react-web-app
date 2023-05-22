@@ -1,0 +1,233 @@
+body {
+    padding: 0.5rem;
+}
+
+/* Left sidebar */
+.wd-left-sidebar {
+    width: 20%
+}
+
+.wd-left-sidebar a {
+    text-decoration: none;
+    color: black;
+}
+
+.wd-left-sidebar i {
+    padding-right: 1rem;
+}
+
+/* explore-css.html navigation table */
+.wd-table-container {
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 90%;
+}
+
+.wd-left-sidebar table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.wd-left-sidebar td {
+    padding: 8px;
+    text-align: left;
+}
+
+.wd-left-sidebar tr:not(:last-child) td {
+    border-bottom: 1px solid lightgray;
+}
+
+.wd-main-content {
+    border: 1px solid lightgrey;
+    width: 60%;
+    align-items: center;
+}
+
+.wd-search-entry {
+    display: flex;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    border: 0;
+    border-radius: 5rem;
+    font-size: 1rem;
+}
+
+.wd-cc-search-bar-div .wd-cc-gear {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+}
+
+.wd-nav-tabs {
+    display: flex;
+    justify-content: center;
+}
+
+.wd-nav-bar {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.wd-nav-item {
+    margin-right: 2rem;
+}
+
+.wd-nav-link {
+    display: block;
+    padding: 1rem 1.5rem;
+    text-decoration: none;
+    color: #657786;
+}
+
+.wd-nav-link.active {
+    border-bottom: 5px solid #1DA1F2;
+}
+
+.wd-container {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.wd-container img {
+    width: 100%;
+}
+
+.wd-right-sidebar {
+    width: 20%
+}
+
+.wd-tuits {
+    list-style-type: none;
+}
+
+.wd-tuit {
+    margin-left: -1rem;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.wd-tuit-description {
+    color: #657786;
+    font-weight: normal;
+}
+
+.wd-tuit-line {
+    margin-bottom: 5px;
+    /* Adjust the value as per your preference */
+}
+
+.wd-tuit-icon {
+    margin-right: 1rem;
+}
+
+/* index.html */
+/* left column */
+.wd-lc .list-group-item {
+    display: inline-block;
+}
+
+/* Float the icon and text to the left of each row */
+.wd-lc .list-group-item i {
+    float: left;
+    margin-right: 0.5rem;
+}
+
+.wd-lc .list-group-item span {
+    float: left;
+}
+
+.wd-lc-tweet-btn {
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+/* center column */
+.wd-cc-input-form {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.wd-cc .fa-magnifying-glass,
+.wd-main-content .fa-magnifying-glass {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: 1rem;
+}
+
+.wd-main-content .uil-cog {
+    font-size: 1.5rem;
+    margin-left: 3rem;
+    padding-left: 1rem;
+}
+
+.wd-cc-input-field {
+    flex-grow: 1;
+    padding-left: 0.75rem;
+    text-indent: 1.5rem;
+}
+
+.wd-cc .wd-cc-gear {
+    margin-left: 1rem;
+    font-size: 1.75rem;
+    color: #007BFF;
+}
+
+/* navigation bar */
+.nav {
+    margin-top: -0.5rem;
+}
+
+.wd-cc .image-col {
+    justify-content: center;
+    padding: 0%;
+}
+
+.wd-cc img {
+    border-radius: 10px;
+}
+
+.list-group-item .row {
+    text-align: left;
+}
+
+.wd-cc .list-group-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+.wd-right-column img {
+    width: 48px;
+}
+
+.wd-right-column .container {
+    padding: 0%;
+}
+
+.wd-align-text-icon {
+    display: flex;
+    align-items: center;
+}
+
+.wd-rc-follow-btn-col {
+    padding-left: 0%;
+}
+
+/* Responsive grids */
+@media (max-width: 540px) {
+    .wd-lc-tweet-btn {
+        width: 120%;
+    }
+}
+
+@media (min-width: 960px) and (max-width: 1140px) {
+    .wd-lc-tweet-btn {
+        width: 120%;
+    }
+}
