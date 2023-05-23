@@ -10,6 +10,7 @@ body {
 .wd-bookmarks-header {
     display: flex;
     align-items: center;
+    width: 100%;
 }
 
 .wd-left-icon {
@@ -25,10 +26,6 @@ body {
 .wd-right-icon {
     position: relative;
     margin-right: 2rem;
-}
-
-.wd-bookmarks-header {
-    width: 100%;
 }
 
 .wd-profile {

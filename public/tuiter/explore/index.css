@@ -2,9 +2,8 @@ body {
     padding: 0.5rem;
 }
 
-/* Left sidebar */
 .wd-left-sidebar {
-    width: 20%
+    width: 20%;
 }
 
 .wd-left-sidebar a {
@@ -16,7 +15,6 @@ body {
     padding-right: 1rem;
 }
 
-/* explore-css.html navigation table */
 .wd-table-container {
     border: 1px solid lightgrey;
     border-radius: 10px;
@@ -46,8 +44,7 @@ body {
 
 .wd-search-entry {
     display: flex;
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
+    padding: 0.75rem;
     border: 0;
     border-radius: 5rem;
     font-size: 1rem;
@@ -96,7 +93,7 @@ body {
 }
 
 .wd-right-sidebar {
-    width: 20%
+    width: 20%;
 }
 
 .wd-tuits {
@@ -117,20 +114,12 @@ body {
 
 .wd-tuit-line {
     margin-bottom: 5px;
-    /* Adjust the value as per your preference */
 }
 
 .wd-tuit-icon {
     margin-right: 1rem;
 }
 
-/* index.html */
-/* left column */
-.wd-lc .list-group-item {
-    display: inline-block;
-}
-
-/* Float the icon and text to the left of each row */
 .wd-lc .list-group-item i {
     float: left;
     margin-right: 0.5rem;
@@ -145,7 +134,6 @@ body {
     margin-top: 0.5rem;
 }
 
-/* center column */
 .wd-cc-input-form {
     position: relative;
     display: flex;
@@ -179,7 +167,6 @@ body {
     color: #007BFF;
 }
 
-/* navigation bar */
 .nav {
     margin-top: -0.5rem;
 }
@@ -220,13 +207,7 @@ body {
 }
 
 /* Responsive grids */
-@media (max-width: 540px) {
-    .wd-lc-tweet-btn {
-        width: 120%;
-    }
-}
-
-@media (min-width: 960px) and (max-width: 1140px) {
+@media (max-width: 540px), (min-width: 992px) and (max-width: 1200px) {
     .wd-lc-tweet-btn {
         width: 120%;
     }
