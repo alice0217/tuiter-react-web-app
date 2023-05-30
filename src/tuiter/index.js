@@ -24,7 +24,7 @@ function Tuiter() {
                         <Route path="/notifications" element={<h1>Notifications</h1>}/>
                     </Routes>
                 </div>
-                <div className="col-lg-3 d-none d-lg-block wd-right-column">
+                <div className="col-lg-3 d-none d-lg-block">
                     <WhoToFollowList/>
                 </div>
             </div>
