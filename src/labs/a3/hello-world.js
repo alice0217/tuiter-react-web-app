@@ -1,4 +1,4 @@
-import Nav from "src/nav";
+import Nav from "../../nav";
 
 function HelloWorld() {
     return(
