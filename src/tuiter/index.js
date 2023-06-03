@@ -32,7 +32,7 @@ function Tuiter() {
                             <Route path="/home" element={<HomeScreen/>}/>
                             <Route path="/explore" element={<ExploreScreen/>}/>
                             <Route path="/bookmarks" element={<BookmarksScreen/>}/>
-                            <Route path="/list" element={ListScreen}/>
+                            <Route path="/lists" element={ListScreen}/>
                             <Route path="/profile" element={<ProfileScreen/>}/>
                             <Route path="/notifications" element={<h1>Notifications</h1>}/>
                         </Routes>
