@@ -6,6 +6,7 @@ import ExploreScreen from "./explore-screen";
 import BookmarksScreen from "./bookmarks-screen";
 import ProfileScreen from "./profile-screen";
 import WhoToFollowList from "./who-to-follow-list";
+import ListScreen from "./list-screen";
 
 import React from "react";
 import whoReducer from "./reducers/who-reducer"; // import the reducer
@@ -31,6 +32,7 @@ function Tuiter() {
                             <Route path="/home" element={<HomeScreen/>}/>
                             <Route path="/explore" element={<ExploreScreen/>}/>
                             <Route path="/bookmarks" element={<BookmarksScreen/>}/>
+                            <Route path="/list" element={ListScreen}/>
                             <Route path="/profile" element={<ProfileScreen/>}/>
                             <Route path="/notifications" element={<h1>Notifications</h1>}/>
                         </Routes>
