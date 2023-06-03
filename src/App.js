@@ -14,10 +14,10 @@ function App() {
         <BrowserRouter>
             <div className="container">
                 <Routes>
-                    {/*m declare the Lab component as the default landing screen */}
+                    {/*Default landing screen*/}
                     <Route path="/"
                            element={
-                               <Navigate to="/labs"/>}/>
+                               <Navigate to="/labs/a3"/>}/>
                     <Route path="/labs/*"
                            element={<Labs/>}/>
                     <Route path="/hello"
