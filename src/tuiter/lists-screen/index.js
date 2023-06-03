@@ -1,5 +1,5 @@
 function ListsScreen() {
-    return <h1>List</h1>;
+    return <h1>Lists</h1>;
 }
 
 export default ListsScreen;
