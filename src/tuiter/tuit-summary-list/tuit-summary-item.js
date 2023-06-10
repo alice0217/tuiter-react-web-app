@@ -6,10 +6,10 @@ const TuitSummaryItem = (
         tuit = {
             "_id": 123,
             "topic": "Space",
-            "userName": "SpaceX",
+            "username": "SpaceX",
             "title": "Tesla CyberTruck lands on Mars and picks up the Curiosity rover on its 6' bed",
             "time": "2h",
-            "image": "spacex.png",
+            "image": "/images/spacex.png",
             "liked": true,
             "replies": 123,
             "retuits": 432,
@@ -23,14 +23,14 @@ const TuitSummaryItem = (
         <li className="list-group-item">
             <div className="row">
                 <div className="col-10">
-                    <div>{tuit.userName}&nbsp;
+                    <div>{tuit.username}&nbsp;
                         <GoVerified/>&nbsp;·&nbsp;
                          {tuit.time}</div>
                     <div className="fw-bolder">{tuit.topic}</div>
                     <div>{tuit.title}</div>
                 </div>
                 <div className="col-2 d-flex align-items-center justify-content-center">
-                    <img width={70} height={70} className="float-end rounded-3" src={`/images/${tuit.image}`}/>
+                    <img width={70} height={70} className="float-end rounded-3" src={tuit.image}/>
                 </div>
             </div>
         </li>

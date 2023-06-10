@@ -10,6 +10,10 @@ import ListsScreen from "./lists-screen";
 import MoreScreen from "./more-screen";
 import NotificationsScreen from "./notifications-screen";
 import MessagesScreen from "./messages-screen";
+import LoginScreen from "./user/login-screen";
+import RegisterScreen from "./user/register-screen";
+import authReducer from "./reducers/auth-reducer";
+
 
 import React from "react";
 import whoReducer from "./reducers/who-reducer"; // import the reducer
@@ -18,7 +22,7 @@ import {Provider} from "react-redux";            // import the Provider componen
 
 import tuitsReducer from "./reducers/tuits-reducer"; // import the new tuits reducer
 
-const store = configureStore({reducer: {who: whoReducer, tuits: tuitsReducer}}); // configure the
+const store = configureStore({reducer: {who: whoReducer, tuits: tuitsReducer, user: authReducer}}); // configure the
 // store
 
 function Tuiter() {
@@ -32,13 +36,15 @@ function Tuiter() {
                     </div>
                     <div className="col-xl-7 col-lg-7 col-md-9 col-sm-10 col-10">
                         <Routes>
+                            <Route path="/login" element={<LoginScreen/>}/>
+                            <Route path="/register" element={<RegisterScreen/>}/>
+                            <Route path="/profile" element={<ProfileScreen/>}/>
                             <Route path="/home" element={<HomeScreen/>}/>
                             <Route path="/explore" element={<ExploreScreen/>}/>
                             <Route path="/notifications" element={<NotificationsScreen/>}/>
                             <Route path="/messages" element={<MessagesScreen/>}/>
                             <Route path="/bookmarks" element={<BookmarksScreen/>}/>
                             <Route path="/lists" element={<ListsScreen/>}/>
-                            <Route path="/profile" element={<ProfileScreen/>}/>
                             <Route path="/more" element={<MoreScreen/>}/>
                         </Routes>
                     </div>
