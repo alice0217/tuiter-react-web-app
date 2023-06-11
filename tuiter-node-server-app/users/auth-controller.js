@@ -5,15 +5,14 @@ const AuthController = (app) => {
     // if there's already a user with that username then we respond with an error.
     // Otherwise, we create the new user and store it in the session's currentUser property, so we
     // can remember that this new user is now the currently logged-in user
-    const register = (req, res) => { // given username
-        const username = req.body.username;
-        const user = usersDao.findUserByUsername(username);
+    const register = (req, res) => {
+        const handle = req.body.handle;
+        const user = usersDao.findUserByHandle(handle); // user's handle is unique
         if (user) { // if user exists already
             res.sendStatus(409);
             return;
         }
         const newUser = usersDao.createUser(req.body); // new user's info is in
-        // req.body
         req.session["currentUser"] = newUser;
         res.json(newUser);
     };
@@ -59,10 +58,10 @@ const AuthController = (app) => {
     };
 
     app.post("/api/users/register", register);
-    app.post("/api/users/login", login);
-    app.post("/api/users/profile", profile);
-    app.post("/api/users/logout", logout);
-    app.put("/api/users", update);
+    app.post("/api/users/login",    login);
+    app.post("/api/users/profile",  profile);
+    app.post("/api/users/logout",   logout);
+    app.put ("/api/users",          update);
 }
 
 export default AuthController;

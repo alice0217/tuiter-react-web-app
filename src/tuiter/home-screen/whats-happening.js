@@ -1,11 +1,10 @@
 import React, {useState} from "react";
-import {AiOutlineGif} from "react-icons/ai";
+import {AiOutlineGif, AiOutlinePicture} from "react-icons/ai";
 import {BiBold, BiItalic} from "react-icons/bi";
 import {BsEmojiSmile} from "react-icons/bs";
 import {HiOutlineLocationMarker} from "react-icons/hi";
 import {MdFormatListBulleted} from "react-icons/md";
 import {TbCalendarStats} from "react-icons/tb";
-import {AiOutlinePicture} from "react-icons/ai";
 
 // import {createTuit} from "../reducers/tuits-reducer"
 import {createTuitThunk} from "../services/tuits-thunks";
@@ -15,6 +14,8 @@ const WhatsHappening = () => {
     // the initial state of whatsHappening will be an empty string
     const {currentUser} = useSelector((state) => state.user); // use currentUser to determine
     // whether the user has logged in or not. If not, alert user to log in.
+    let [topic, setTopic] = useState("");
+    let [title, setTitle] = useState("");
     let [whatsHappening, setWhatsHappening] = useState('');
     const dispatch = useDispatch();
     const tuitClickHandler = () => {
@@ -22,24 +23,44 @@ const WhatsHappening = () => {
             alert("You need to log in first to make a tuit.");
         }
         const newTuit = {
-            _id: (new Date()).getTime()+"",
+            _id: (new Date()).getTime() + "",
+            topic: topic,
+            time: currentUser.time,
+            title: title,
+            username: currentUser.username,
+            handle: currentUser.handle,
             tuit: whatsHappening,
             image: currentUser.image, // pass the image
-        }
+        };
         dispatch(createTuitThunk(newTuit));
+        setTopic("");
+        setTitle("");
         setWhatsHappening("")
     }
 
     return (
         <div className={"row"}>
             <div className={"col-auto"}>
-                <img src={currentUser ? currentUser.image : "/images/placeholder.jpg"} style={{display: "block"}} width={60} height={60} className={"rounded-circle"}/>
+                <img src={currentUser ? currentUser.image : "/images/placeholder.jpg"}
+                     style={{display: "block"}} width={60} height={60}
+                     className={"rounded-circle"}/>
             </div>
 
             <div className={"col-10"}>
+                <div className={"d-flex align-items-center justify-content-center w-100"}>
+                    <input value={topic} placeholder={"Topic"} type={"text"}
+                              className={"form-control border-0"} style={{ marginRight: "10px" }}
+                              onChange={(event) => setTopic(event.target.value)}>
+                    </input>
+                    <input value={title} placeholder={"Title"} type={"text"}
+                              className={"form-control border-0"}
+                              onChange={(event) => setTitle(event.target.value)}>
+                    </input>
+                </div>
+
                 <textarea value={whatsHappening} placeholder={"What's happening?"}
-                className={"form-control border-0"}
-                onChange={(event) => setWhatsHappening(event.target.value)}>
+                          className={"form-control border-0 mt-2"}
+                          onChange={(event) => setWhatsHappening(event.target.value)}>
                 {/*    event.target.value is what the user types/inputs then reset
                  whatsHappening */}
                 </textarea>
@@ -60,7 +81,9 @@ const WhatsHappening = () => {
                     </div>
                 </div>
             </div>
-            <div className={"col-12"}><hr/></div>
+            <div className={"col-12"}>
+                <hr/>
+            </div>
         </div>
     );
 }

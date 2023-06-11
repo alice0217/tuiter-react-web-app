@@ -1,6 +1,9 @@
 // user data model
 
-let users = [];
+// let users = [];
+
+import people from "./users.js"; // import the array of users, include the extension
+let users = people;
 
 export const findAllUsers = () => users;
 

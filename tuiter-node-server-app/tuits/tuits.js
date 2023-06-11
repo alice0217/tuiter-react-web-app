@@ -11,7 +11,11 @@ export default [
         "likes": 2345,
         "replies": 123,
         "retuits": 432,
-        "tuit": "You want to wake up in the morning and think the future is going to be great - and that’s what being a spacefaring civilization is all about. It’s about believing in the future and thinking that the future will be better than the past. And I can’t think of anything more exciting than going out there and being among the stars"
+        "explored": true,
+        "tuit": "You want to wake up in the morning and think the future is going to be great -"
+                + " and that’s what being a spacefaring civilization is all about. It’s about believing in the future and thinking that the future will be better than the past. And I can’t think of anything more exciting than going out there and being among the stars",
+        "disliked": false,
+        "dislikes": 10,
     },
     {
         "_id": "234",
@@ -25,7 +29,11 @@ export default [
         "replies": 321,
         "retuits": 432,
         "title": "The Boring Company fixing traffic",
-        "tuit": "The Boring Company (TBC) is an American infrastructure and tunnel construction services company founded by Elon Musk. Its ongoing and proposed projects are designed for intra-city ('loop') transit systems."
+        "explored": true,
+        "tuit": "The Boring Company (TBC) is an American infrastructure and tunnel construction"
+                + " services company founded by Elon Musk. Its ongoing and proposed projects are designed for intra-city ('loop') transit systems.",
+        "disliked": false,
+        "dislikes": 200,
     },
     {
         "_id": "345",
@@ -39,6 +47,12 @@ export default [
         "liked": true,
         "likes": 3456,
         "replies": 345,
-        "retuits": 654
+        "retuits": 654,
+        "explored": true,
+        "disliked": false,
+        "dislikes": 0,
     },
 ];
+
+
+// "explore" == true means the tuit will be on the explore page

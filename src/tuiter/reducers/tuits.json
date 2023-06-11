@@ -11,7 +11,8 @@
     "retuits": 432,
     "likes": 2345,
     "handle": "@spacex",
-    "tuit": "This morning at 12:34 EST Earth time, a convoy of Tesla CyberTrucks drove across the Martian landscape after picking up the Curiosity, Sojourner, Spirit, and Perserance on their 6' beds"
+    "tuit": "This morning at 12:34 EST Earth time, a convoy of Tesla CyberTrucks drove across the Martian landscape after picking up the Curiosity, Sojourner, Spirit, and Perserance on their 6' beds",
+    "dislikes": 10
   },
   {
     "_id": 234,
@@ -25,7 +26,8 @@
     "retuits": 654,
     "likes": 32345,
     "handle": "@spacex",
-    "tuit": "Tesla FSD finally makes driving obsolete. After years of delay, Tesla Full Self Driving can drive you to work while you work, play, or sleep"
+    "tuit": "Tesla FSD finally makes driving obsolete. After years of delay, Tesla Full Self Driving can drive you to work while you work, play, or sleep",
+    "dislikes": 15
   },
   {
     "_id": 345,
@@ -39,6 +41,7 @@
     "retuits": 543,
     "likes": 22345,
     "handle": "@spacex",
-    "tuit": "You want to wake up in the morning and think the future is going to be great - and that’s what being a spacefaring civilization is all about. It’s about believing in the future and thinking that the future will be better than the past. And I can’t think of anything more exciting than going out there and being among the stars"
+    "tuit": "You want to wake up in the morning and think the future is going to be great - and that’s what being a spacefaring civilization is all about. It’s about believing in the future and thinking that the future will be better than the past. And I can’t think of anything more exciting than going out there and being among the stars",
+    "dislikes": 0
   }
 ]

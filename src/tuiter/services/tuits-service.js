@@ -1,5 +1,8 @@
 import axios from "axios";
 const TUITS_API = "http://localhost:4000/api/tuits"; // tuits server
+// const TUITS_API = 'https://tuiter-node-server-app-zx8t.onrender.com/api/tuits';
+// const API_BASE = process.env.REACT_APP_API_BASE;
+// const TUITS_API = `${API_BASE}/tuits`;
 
 // returns new tuit's data
 export const createTuit = async (tuit) => {
@@ -16,15 +19,13 @@ export const findTuits = async () => { // async tags this function as asynchrono
 }
 
 export const deleteTuit = async (tid) => { // send HTTP DELETE request to server
-    console.log("delete");
     // given tuit is the tuit to be deleted
-    const response = await axios.delete(`${TUITS_API}${tid}`) // append tuit's ID to URL
+    const response = await axios.delete(`${TUITS_API}/${tid}`) // append tuit's ID to URL
     // data contains response's status we'll ignore for now
     return response.data;
 }
 
 export const updateTuit = async (tuit) => {
-    const response = await axios
-        .put(`${TUITS_API}/${tuit._id}`, tuit);
+    const response = await axios.put(`${TUITS_API}/${tuit._id}`, tuit);
     return tuit;
 }

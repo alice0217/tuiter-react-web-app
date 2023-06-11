@@ -53,7 +53,6 @@ const tuitsSlice = createSlice(
                 (state, {payload}) => { // server response successful
                     state.loading = false; // payload from action contains tuit ID to
                     state.tuits = state.tuits.filter(t => t._id !== payload) // remove, turn off
-                    console.log("here");
                     // loading flag, filter out tuit whose ID matches tuit to remove, we're
                     // ignoring pending and rejected thunks
                 },

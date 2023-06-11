@@ -1,7 +1,6 @@
 import people from "./users.js"; // import the array of users, include the extension
 let users = people;
 
-
 // C(post) R(get) U(put) D(delete)
 const UserController = (app) => {
     app.get("/api/users", findUsers); // request pattern /api/users to call a function

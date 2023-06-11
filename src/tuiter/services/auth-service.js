@@ -9,20 +9,20 @@ const api = axios.create({withCredentials: true});
 // logout: ${USERS_URL}/logout
 // profile: ${USERS_URL}/profile
 // updateUser: ${USERS_URL}/${user._id}
-// register: ${USERS_URL}/register
+// register: ${USERS_URL}
 
 export const login = async({username, password}) => {
-    const response = await api.post(USERS_URL, {username, password});
+    const response = await api.post(`${USERS_URL}/login`, {username, password});
     return response.data;
 };
 
 export const logout = async () => {
-    const response = await api.post(USERS_URL);
+    const response = await api.post(`${USERS_URL}/logout`);
     return response.data;
 }
 
 export const profile = async () => {
-    const response = await api.post(USERS_URL);
+    const response = await api.post(`${USERS_URL}/profile`);
     return response.data;
 }
 

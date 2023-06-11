@@ -10,7 +10,7 @@ const TuitSummaryList = () => {
     return (
         <ul className="list-group">
             {
-                tuits.map(tuit =>
+                tuits.map(tuit => tuit.explored &&
                               <TuitSummaryItem
                                   key={tuit._id} tuit={tuit}/>)
             }
