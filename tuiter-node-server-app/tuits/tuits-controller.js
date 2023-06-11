@@ -15,7 +15,7 @@ const createTuit = (req, res) => {
     newTuit.disliked = false;
     newTuit.dislikes = 0;
     tuits.push(newTuit);
-    res.json(tuits);
+    res.json(newTuit);
 }
 
 const findTuits = (req, res) => {

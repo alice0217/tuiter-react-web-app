@@ -9,7 +9,7 @@ import {
 
 const initialState = {
     tuits: [],
-    loading: false
+    loading: false,
 }
 
 //user info

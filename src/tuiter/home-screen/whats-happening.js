@@ -7,7 +7,7 @@ import {MdFormatListBulleted} from "react-icons/md";
 import {TbCalendarStats} from "react-icons/tb";
 
 // import {createTuit} from "../reducers/tuits-reducer"
-import {createTuitThunk} from "../services/tuits-thunks";
+import {createTuitThunk, findTuitsThunk} from "../services/tuits-thunks";
 import {useDispatch, useSelector} from "react-redux";
 
 const WhatsHappening = () => {
