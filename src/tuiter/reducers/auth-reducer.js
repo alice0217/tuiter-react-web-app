@@ -9,7 +9,9 @@ import {
 
 const authSlice = createSlice({
                                   name: "auth",
-                                  initialState: {currentUser: null},
+                                  initialState: {
+                                      currentUser: null
+                                  },
                                   reducers: {},
                                   extraReducers: {
                                       [logoutThunk.fulfilled]:

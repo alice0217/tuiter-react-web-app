@@ -54,7 +54,8 @@ function ProfileScreen() {
                         navigate("/tuiter/login");
                     }}>Logout
                     </button>
-                    <button className={"btn btn-primary mt-2 float-end"} onClick={save}>Save</button>
+                    <button className={"btn btn-primary mt-2 float-end"} onClick={save}>Save
+                    </button>
                 </div>
             )}
         </div>
