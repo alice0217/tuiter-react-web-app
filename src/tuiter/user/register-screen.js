@@ -63,6 +63,7 @@ function RegisterScreen() {
                            reader.addEventListener("load", () => {
                                localStorage.setItem("icon", reader.result);
                                setImage("");
+                               // setImage(reader.result+"");
                            })
                            }
                        }/>

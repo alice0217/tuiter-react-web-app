@@ -12,7 +12,7 @@ function LoginScreen() {
         try {
             const response = await dispatch(loginThunk({username, password}));
             if (response.error) {
-                alert("Invalid credentials."); // display the error message in an alert
+                alert(response.payload.message); // display the error message in an alert
             } else {
                 navigate("/tuiter/profile");
             }
