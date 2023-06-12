@@ -1,7 +1,6 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import TuitsList from "../tuits";
 import WhatsHappening from "./whats-happening";
-import {useSelector} from "react-redux";
 
 function HomeScreen() {
     return (

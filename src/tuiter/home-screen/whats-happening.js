@@ -18,6 +18,7 @@ const WhatsHappening = () => {
     let [title, setTitle] = useState("");
     let [whatsHappening, setWhatsHappening] = useState('');
     const dispatch = useDispatch();
+
     const tuitClickHandler = () => {
         if (!currentUser || currentUser === 1) {
             alert("You need to log in first to make a tuit.");
