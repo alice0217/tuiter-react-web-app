@@ -18,8 +18,6 @@ const NavigationSidebar = () => {
     const links = ["home", "explore", "notifications", "messages", "bookmarks", "lists",
                    "more"];
 
-    const {currentUser} = useSelector((state) => state.user);
-
     // Map each link to an icon to render later
     const linkIcons = {
         home: AiFillHome,
@@ -31,18 +29,20 @@ const NavigationSidebar = () => {
         more: AiFillMinusCircle
     };
 
+    const loggedInUser = localStorage.getItem("user");
+
     return (
         <div className="list-group">
             {/*Renders the twitter icon in the top*/}
             <Link className={'list-group-item'} key={"twitter-icon"}><FaTwitter/></Link>
-            {!currentUser && <Link className={"list-group-item"} to={"/tuiter/login"}>
+            {!loggedInUser && <Link className={"list-group-item"} to={"/tuiter/login"}>
                 <div className="d-flex align-items-center">
                     <FiLogIn/>{/* Render the icon component */}
                     &nbsp;
                     <span className="d-none d-xl-flex">Login</span>
                 </div>
             </Link>}
-            {!currentUser && <Link className={"list-group-item"}
+            {!loggedInUser && <Link className={"list-group-item"}
                                    to={"/tuiter/register"}>
                 <div className="d-flex align-items-center">
                     <FaRegistered/>{/* Render the icon component */}
@@ -50,7 +50,7 @@ const NavigationSidebar = () => {
                     <span className="d-none d-xl-flex">Register</span>
                 </div>
             </Link>}
-            {currentUser && <Link className={"list-group-item"}
+            {loggedInUser && <Link className={"list-group-item"}
                                   to={"/tuiter/profile"}>
                 <div className="d-flex align-items-center">
                     <BsFillPersonFill/>{/* Render the icon component */}

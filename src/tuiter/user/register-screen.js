@@ -14,7 +14,7 @@ function RegisterScreen() {
     const dispatch = useDispatch();
 
     const handleRegister = async () => {
-        if (!firstName || !lastName || !username || !password || !handle || !image) {
+        if (!firstName || !lastName || !username || !password || !handle) {
             alert("Please fill in all fields and select an image.");
             return;
         }
@@ -57,11 +57,15 @@ function RegisterScreen() {
                 <label>Image</label>
                 <input type="file" className="form-control" id="file-upload" accept="image/*"
                        onChange={(event) => {
-                           const imageFiles = event.target.files;
-                           const imageFilesLength = imageFiles.length;
-                           if (imageFilesLength > 0) {
-                               setImage(URL.createObjectURL(imageFiles[0]));
-                           }}}/>
+                           const image = event.target.files[0];
+                           const reader = new FileReader();
+                           reader.readAsDataURL(image);
+                           reader.addEventListener("load", () => {
+                               localStorage.setItem("icon", reader.result);
+                               setImage("");
+                           })
+                           }
+                       }/>
             </div>
             <button className={"btn btn-primary mt-2"} onClick={handleRegister}>Register</button>
 

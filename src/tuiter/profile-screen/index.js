@@ -4,13 +4,18 @@ import {useNavigate} from "react-router";
 import {logoutThunk, profileThunk, updateUserThunk} from "../services/auth-thunks";
 
 function ProfileScreen() {
-    const {currentUser} = useSelector((state) => state.user);
-    const [profile, setProfile] = useState(currentUser || {firstName: "", lastName: ""});
+    const loggedInUser = localStorage.getItem("user");
+    let parsedLoggedInUser = JSON.parse(loggedInUser);
+    const [profile, setProfile] = useState(parsedLoggedInUser || {firstName: "", lastName: ""});
     const dispatch = useDispatch();
     const navigate = useNavigate();
+
     const save = async () => {
         await dispatch(updateUserThunk(profile));
+        localStorage.setItem("user", JSON.stringify(profile));
     };
+
+    // this is used to prevent "destroy is not a function" error.
     useEffect(() => {
         async function fetchData() {
             await dispatch(profileThunk());
@@ -19,8 +24,8 @@ function ProfileScreen() {
     }, [dispatch]);
 
     useEffect(() => {
-        setProfile(currentUser);
-    }, [currentUser]);
+        setProfile(profile);
+    }, [profile]);
 
     return (
         <div>

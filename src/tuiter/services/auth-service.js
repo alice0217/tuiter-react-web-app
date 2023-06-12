@@ -12,11 +12,13 @@ export const login = async({username, password}) => {
 
 export const logout = async () => {
     const response = await api.post(`${USERS_URL}/logout`);
+    localStorage.clear();
     return response.data;
 }
 
 export const profile = async () => {
     const response = await api.post(`${USERS_URL}/profile`);
+    localStorage.setItem("user", JSON.stringify(response.data));
     return response.data;
 }
 
@@ -41,5 +43,6 @@ export const register = async ({
         handle,
         image,
     });
+    localStorage.setItem("user", JSON.stringify(response.data));
     return response.data;
 };

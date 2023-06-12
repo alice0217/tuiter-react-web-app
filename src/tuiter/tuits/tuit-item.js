@@ -9,6 +9,8 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const TuitItem = ({tuit}) => {
     const dispatch = useDispatch();
+    const loggedInUser = localStorage.getItem("user");
+    const parsedLoggedInUser = JSON.parse(loggedInUser);
     const deleteTuitHandler = (id) => {
         dispatch(deleteTuitThunk(id));
     }
@@ -19,7 +21,8 @@ const TuitItem = ({tuit}) => {
                  picture*/}
                     <img width={50} height={50} className={"float-end rounded-circle"
                                                            + " shadow-0-5-5-0"}
-                         src={tuit.image} style={{"color": "lightgray", "boxShadow": "0px 5px 5px 0px"}}/>
+                         src={parsedLoggedInUser && tuit.handle===parsedLoggedInUser.handle ? localStorage.getItem("icon") : tuit.image} style={{"color": "lightgray", "boxShadow": "0px 5px"
+                                                                                       + " 5px 0px"}}/>
                 </div>
                 <div className={"col-10"}> {/*tuit content*/}
                     {/*text*/}

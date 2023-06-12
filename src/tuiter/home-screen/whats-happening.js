@@ -9,29 +9,43 @@ import {TbCalendarStats} from "react-icons/tb";
 // import {createTuit} from "../reducers/tuits-reducer"
 import {createTuitThunk, findTuitsThunk} from "../services/tuits-thunks";
 import {useDispatch, useSelector} from "react-redux";
+import {useEffect} from "react";
+import {profileThunk} from "../services/auth-thunks";
 
 const WhatsHappening = () => {
-    // the initial state of whatsHappening will be an empty string
-    const {currentUser} = useSelector((state) => state.user); // use currentUser to determine
-    // whether the user has logged in or not. If not, alert user to log in.
     let [topic, setTopic] = useState("");
     let [title, setTitle] = useState("");
     let [whatsHappening, setWhatsHappening] = useState('');
     const dispatch = useDispatch();
 
+    const [user, setUser] = useState();
+
+    useEffect(() => {
+        const loggedInUser = localStorage.getItem("user");
+        if (loggedInUser) {
+            console.log("logged in");
+            const foundUser = JSON.parse(loggedInUser);
+            setUser(foundUser);
+        }
+    }, []);
+
+    const loggedInUser = localStorage.getItem("user");
+    const parsedLoggedInUser = JSON.parse(loggedInUser);
+
+
     const tuitClickHandler = () => {
-        if (!currentUser || currentUser === 1) {
+        if (!parsedLoggedInUser) {
             alert("You need to log in first to make a tuit.");
         }
         const newTuit = {
             _id: (new Date()).getTime() + "",
             topic: topic,
-            time: currentUser.time,
+            time: parsedLoggedInUser.time,
             title: title,
-            username: currentUser.username,
-            handle: currentUser.handle,
+            username: parsedLoggedInUser.username,
+            handle: parsedLoggedInUser.handle,
             tuit: whatsHappening,
-            image: currentUser.image, // pass the image
+            // no need to pass image because payload is too big
         };
         dispatch(createTuitThunk(newTuit));
         setTopic("");
@@ -42,7 +56,7 @@ const WhatsHappening = () => {
     return (
         <div className={"row"}>
             <div className={"col-auto"}>
-                <img src={currentUser ? currentUser.image : "/images/placeholder.jpg"}
+                <img src={parsedLoggedInUser ?  localStorage.getItem("icon") : "/images/placeholder.jpg"}
                      style={{display: "block"}} width={60} height={60}
                      className={"rounded-circle"}/>
             </div>

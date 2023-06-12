@@ -43,7 +43,6 @@ export const registerThunk = createAsyncThunk(
             handle,
             image,
         };
-        console.log(firstName);
         await authService.register(userData);
         return userData;
     }
