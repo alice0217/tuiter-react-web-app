@@ -5,7 +5,12 @@ import UserController from "./users/users-controller.js";
 import TuitsController from "./tuits/tuits-controller.js";
 import session from "express-session"; // import new server session library
 import AuthController from "./users/auth-controller.js";
-import {useEffect} from "react";
+
+import mongoose from "mongoose";
+mongoose.connect("mongodb://localhost:27017/tuiter");
+
+const CONNECTION_STRING = process.env.DB_CONNECTION_STRING || 'mongodb://localhost:27017/tuiter';
+mongoose.connect(CONNECTION_STRING);
 
 const app = express();
 const port = process.env.PORT || 4000;
@@ -17,14 +22,6 @@ app.use( // configure server session
                      saveUninitialized: true,
                  })
 );
-// cors - cross-origin resource sharing - establish rules by which resources can be shared
-// across domains
-// app.use(
-//     cors({
-//              credentials: true,
-//              origin: "http://localhost:3000",
-//          })
-// );
 
 app.use((req, res, next) => {
     const allowedOrigins = ["http://localhost:3000",
@@ -42,8 +39,7 @@ app.use((req, res, next) => {
 });
 
 app.use(express.json()); // parse JSON from HTTP request body because express
-// does not
-// know how
+// does not know how
 // to extract data from an HTTP body. Express defines a JSON middleware to parse data from the
 // body. All requests will first go through this middleware parsing the HTTP body into a JSON
 // object added to the requested object in a new body property that later HTTP handlers can access.
