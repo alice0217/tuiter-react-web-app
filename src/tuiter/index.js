@@ -14,20 +14,43 @@ import LoginScreen from "./user/login-screen";
 import RegisterScreen from "./user/register-screen";
 import authReducer from "./reducers/auth-reducer";
 
-
 import React from "react";
 import whoReducer from "./reducers/who-reducer"; // import the reducer
-import {configureStore} from "@reduxjs/toolkit"; // import configureStore
-import {Provider} from "react-redux";            // import the Provider component
-
+import {combineReducers, configureStore} from "@reduxjs/toolkit"; // import configureStore
+import {Provider} from "react-redux"; // import the Provider component
 import tuitsReducer from "./reducers/tuits-reducer"; // import the new tuits reducer
+import storage from "redux-persist/lib/storage";
+import {persistReducer, persistStore} from "redux-persist";
+import thunk from "redux-thunk";
 
-const store = configureStore({reducer: {who: whoReducer, tuits: tuitsReducer, user: authReducer}}); // configure the
-// store
+const rootReducer = combineReducers({
+                                        who: whoReducer,
+                                        tuits: tuitsReducer,
+                                        user: authReducer,
+                                    });
+
+const persistConfig = {
+    key: 'root',
+    storage,
+}
+
+const persistedReducer = persistReducer(persistConfig, rootReducer);
+
+export const store = configureStore({
+                                        reducer: persistedReducer,
+                                        devTools: process.env.NODE_ENV !== 'production',
+                                        middleware: [thunk]
+                                    })
+
+export const persistor = persistStore(store);
+
+// const store = configureStore({reducer: {who: whoReducer, tuits: tuitsReducer, user:
+// authReducer}}); // configure the // store
 
 function Tuiter() {
     return (
         <Provider store={store}>
+            {/*<AuthContext>*/}
             <div>
                 <Nav/>
                 <div className="row">
@@ -53,6 +76,7 @@ function Tuiter() {
                     </div>
                 </div>
             </div>
+            {/*</AuthContext>*/}
         </Provider>
     );
 }

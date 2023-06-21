@@ -13,6 +13,7 @@ import {BsFillPersonFill} from "react-icons/bs";
 import {useSelector} from "react-redux";
 
 const NavigationSidebar = () => {
+    const {currentUser} = useSelector((state) => state.user);
     const {pathname} = useLocation();
     const [ignore, tuiter, active] = pathname.split("/");
     const links = ["home", "explore", "notifications", "messages", "bookmarks", "lists",
@@ -29,29 +30,27 @@ const NavigationSidebar = () => {
         more: AiFillMinusCircle
     };
 
-    const loggedInUser = localStorage.getItem("user");
-
     return (
         <div className="list-group">
             {/*Renders the twitter icon in the top*/}
             <Link className={'list-group-item'} key={"twitter-icon"}><FaTwitter/></Link>
-            {!loggedInUser && <Link className={"list-group-item"} to={"/tuiter/login"}>
+            {!currentUser && <Link className={"list-group-item"} to={"/tuiter/login"}>
                 <div className="d-flex align-items-center">
                     <FiLogIn/>{/* Render the icon component */}
                     &nbsp;
                     <span className="d-none d-xl-flex">Login</span>
                 </div>
             </Link>}
-            {!loggedInUser && <Link className={"list-group-item"}
-                                   to={"/tuiter/register"}>
+            {!currentUser && <Link className={"list-group-item"}
+                                    to={"/tuiter/register"}>
                 <div className="d-flex align-items-center">
                     <FaRegistered/>{/* Render the icon component */}
                     &nbsp;
                     <span className="d-none d-xl-flex">Register</span>
                 </div>
             </Link>}
-            {loggedInUser && <Link className={"list-group-item"}
-                                  to={"/tuiter/profile"}>
+            {currentUser && <Link className={"list-group-item"}
+                                   to={"/tuiter/profile"}>
                 <div className="d-flex align-items-center">
                     <BsFillPersonFill/>{/* Render the icon component */}
                     &nbsp;

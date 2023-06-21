@@ -14,6 +14,12 @@ const authSlice = createSlice({
                                   },
                                   reducers: {},
                                   extraReducers: {
+                                      // once logged in, state's currentUser = payload
+                                      // loginThunk is given {username, password}
+                                      [loginThunk.fulfilled]:
+                                          (state, {payload}) => {
+                                              state.currentUser = payload;
+                                          },
                                       [logoutThunk.fulfilled]:
                                           (state) => {
                                               state.currentUser = null;
@@ -28,12 +34,6 @@ const authSlice = createSlice({
                                           },
                                       // registerThunk is given {username, password}
                                       [registerThunk.fulfilled]:
-                                          (state, {payload}) => {
-                                              state.currentUser = payload;
-                                          },
-                                      // once logged in, state's currentUser = payload
-                                      // loginThunk is given {username, password}
-                                      [loginThunk.fulfilled]:
                                           (state, {payload}) => {
                                               state.currentUser = payload;
                                           },

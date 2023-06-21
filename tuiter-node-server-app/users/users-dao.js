@@ -1,46 +1,29 @@
-// user data model
+import usersModel from "./users-model.js";
 
-// let users = [];
-
-import people from "./users.js"; // import the array of users, include the extension
-let users = people;
-
-export const findAllUsers = () => users;
-
-export const findUserById = (uid) => {
-    const index = users.findIndex((u) => u._id === uid);
-    if (index !== -1) return users[index];
-    return null;
+export function findAllUsers() {
+    return usersModel.find();
 }
 
-export const findUserByUsername = (username) => {
-    const index = users.findIndex((u) => u.username === username);
-    if (index !== -1) return users[index];
-    return null;
-}
-
-export const findUserByHandle = (handle) => {
-    const index = users.findIndex((u) => u.handle === handle);
-    if (index !== -1) return users[index];
-    return null;
-}
+export function findUserByUsername(username) {
+    return usersModel.findOne({username: username});
+}w
 
 export const findUserByCredentials = (username, password) => {
-    const index = users.findIndex((u) => u.username === username && u.password === password);
-    if (index !== -1) return users[index];
-    return null;
+    return usersModel.findOne({username: username, password: password});
 }
 
-export const createUser = (user) => users.push(user);
-
-export const updateUser = (uid, user) => {
-    const index = users.findIndex((u) => u._id === uid);
-    users[index] = { ...users[index], ...user};
-    return {status: "ok"};
+export const findUserById = (userId) => {
+    return usersModel.findOne({_id: userId});
 }
 
-export const deleteUser = (uid) => {
-    const index = users.findIndex((u) => u._id === uid);
-    users.splice(index, 1);
-    return {status: "ok"};
+export const createUser = (user) => {
+    return usersModel.create(user);
+}
+
+export const updateUser = (id, user) => {
+    return usersModel.updateOne({_id: id}, {$set: user});
+}
+
+export const deleteUser = (id) => {
+    return usersModel.deleteOne({_id: id});
 }

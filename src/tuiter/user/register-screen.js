@@ -14,7 +14,7 @@ function RegisterScreen() {
     const dispatch = useDispatch();
 
     const handleRegister = async () => {
-        if (!firstName || !lastName || !username || !password || !handle) {
+        if (!firstName || !lastName || !username || !password || !handle || !image) {
             alert("Please fill in all fields and select an image.");
             return;
         }
@@ -25,6 +25,7 @@ function RegisterScreen() {
             alert(e);
         }
     };
+
     return (
         <div>
             <h1>Register</h1>
@@ -60,12 +61,15 @@ function RegisterScreen() {
                            const image = event.target.files[0];
                            const reader = new FileReader();
                            reader.readAsDataURL(image);
-                           reader.addEventListener("load", () => {
-                               localStorage.setItem("icon", reader.result);
-                               setImage("");
-                               // setImage(reader.result+"");
-                           })
-                           }
+                           // reader.addEventListener("load", () => {
+                           // localStorage.setItem("icon", reader.result);
+                           // setImage("");
+                           // setImage(reader.result+"");
+                           // })
+                           // console.log(reader.result);
+                           setImage("/images/spacex.png");
+                           // setImage(reader.result + "");
+                       }
                        }/>
             </div>
             <button className={"btn btn-primary mt-2"} onClick={handleRegister}>Register</button>

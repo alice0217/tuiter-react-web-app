@@ -3,9 +3,8 @@ import * as authService from "./auth-service";
 
 // exclusive to one user, log in, not making changes to the users database
 export const loginThunk = createAsyncThunk(
-    "auth/login", async (credentials) => {
-        const user = await authService.login(credentials);
-        return user;
+    "user/login", async ({username, password}) => {
+        return await authService.login({username, password});
     }
 )
 
@@ -25,25 +24,27 @@ export const logoutThunk = createAsyncThunk(
 
 // update a user from users
 export const updateUserThunk = createAsyncThunk(
-    "user/updateUser", async (user) => {
-        await authService.updateUser(user);
+    "auth/updateUser", async ({userId, user}) => {
+        await authService.updateUser(userId, user);
         return user;
     }
 )
 
-// add a user to users
 export const registerThunk = createAsyncThunk(
-    "user/registerUser",
-    async ({ firstName, lastName, username, password, handle, image }) => {
-        const userData = {
-            firstName,
-            lastName,
-            username,
-            password,
-            handle,
-            image,
-        };
-        await authService.register(userData);
-        return userData;
-    }
-);
+    "auth/register", async ({
+                                firstName,
+                                lastName,
+                                username,
+                                password,
+                                handle,
+                                image,
+                            }) => {
+        return await authService.register({
+                                              firstName,
+                                              lastName,
+                                              username,
+                                              password,
+                                              handle,
+                                              image,
+                                          });
+    });
