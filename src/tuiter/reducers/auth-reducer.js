@@ -10,7 +10,7 @@ import {
 const authSlice = createSlice({
                                   name: "auth",
                                   initialState: {
-                                      currentUser: null
+                                      currentUser: JSON.parse(localStorage.getItem("currentUser")) || null
                                   },
                                   reducers: {},
                                   extraReducers: {
@@ -19,23 +19,28 @@ const authSlice = createSlice({
                                       [loginThunk.fulfilled]:
                                           (state, {payload}) => {
                                               state.currentUser = payload;
+                                              localStorage.setItem("currentUser", JSON.stringify(payload));
                                           },
                                       [logoutThunk.fulfilled]:
                                           (state) => {
                                               state.currentUser = null;
+                                              localStorage.removeItem("currentUser");
                                           },
                                       [profileThunk.fulfilled]:
                                           (state, {payload}) => {
                                               state.currentUser = payload;
+                                              localStorage.setItem("currentUser", JSON.stringify(payload));
                                           },
                                       [updateUserThunk.fulfilled]:
                                           (state, {payload}) => {
                                               state.currentUser = payload;
+                                              localStorage.setItem("currentUser", JSON.stringify(payload));
                                           },
                                       // registerThunk is given {username, password}
                                       [registerThunk.fulfilled]:
                                           (state, {payload}) => {
                                               state.currentUser = payload;
+                                              localStorage.setItem("currentUser", JSON.stringify(payload));
                                           },
                                   }
                               });
