@@ -6,10 +6,10 @@ export function findAllUsers() {
 
 export function findUserByUsername(username) {
     return usersModel.findOne({username: username});
-}w
+}
 
 export const findUserByCredentials = (username, password) => {
-    return usersModel.findOne({username: username, password: password});
+    return usersModel.findOne({username, password});
 }
 
 export const findUserById = (userId) => {
@@ -25,5 +25,5 @@ export const updateUser = (id, user) => {
 }
 
 export const deleteUser = (id) => {
-    return usersModel.deleteOne({_id: id});
+    return usersModel.deletOne({_id: id});
 }

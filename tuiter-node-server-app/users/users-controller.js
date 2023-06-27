@@ -1,5 +1,4 @@
 import * as usersDao from "./users-dao.js";
-import mongoose from "mongoose";
 
 // C(post) R(get) U(put) D(delete)
 const UserController = (app) => {
@@ -19,13 +18,11 @@ const updateUser = async (req, res) => {
     res.json(status);
 };
 
-
 const deleteUser = async (req, res) => {
     const id = req.params.uid;
     const status = await usersDao.deleteUser(id);
     res.json(status);
 };
-
 
 const createUser = async (req, res) => {
     const newUser = await usersDao.createUser(req.body);
@@ -37,7 +34,6 @@ const findUserById = async (req, res) => {
     const user = await usersDao.findUserById(id);
     res.json(user);
 };
-
 
 const findUsers = async (req, res) => {
     const username = req.query.username;

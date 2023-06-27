@@ -7,13 +7,13 @@ const AuthController = (app) => {
     // if there's already a user with that username then we respond with an error.
     // Otherwise, we create the new user and store it in the session's currentUser property, so we
     // can remember that this new user is now the currently logged-in user
-    const register = (req, res) => {
-        const user = usersDao.findUserByUsername(req.body.username);
+    const register = async (req, res) => {
+        const user = await usersDao.findUserByUsername(req.body.username);
         if (user) { // if user exists already
             res.sendStatus(403);
             return;
         }
-        const newUser = usersDao.createUser(req.body);// new user's info is in
+        const newUser = await usersDao.createUser(req.body);// new user's info is in
         req.session["currentUser"] = newUser;
         res.json(newUser);
     };
