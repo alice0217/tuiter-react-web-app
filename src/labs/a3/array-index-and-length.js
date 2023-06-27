@@ -5,7 +5,7 @@ function ArrayIndexAndLength() {
     console.log('Array index and length');
     console.log('length1 = ', length1);
     console.log('index1 = ', index1);
-    return(
+    return (
         <div>
             <h3>Array index and length</h3>
             length1 = {length1} <br/>

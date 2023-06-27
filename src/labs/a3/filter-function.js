@@ -11,7 +11,7 @@ function FilterFunction() {
     console.log('evenNumbers = ', evenNumbers.join(''));
     console.log('oddNumbers = ', oddNumbers.join(''));
 
-    return(
+    return (
         <div>
             <h3>Filter function</h3>
             numbersGreaterThan2 = {numbersGreaterThan2.join('')}<br/>

@@ -9,7 +9,7 @@ function MapFunction() {
     console.log('squares = ', squares.join(''));
     console.log('cubes = ', cubes.join(''));
 
-    return(
+    return (
         <div>
             <h3>Map</h3>
             squares = {squares.join('')};<br/>

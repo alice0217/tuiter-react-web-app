@@ -23,14 +23,17 @@ function WorkingWithArrays() {
     console.log('Working with Arrays');
     console.log('numberArray1 =', numberArray1.join(''));
     console.log('stringArray1 =', stringArray1.join(''));
-    console.log('variableArray1 =', [functionScoped, blockScoped, constant1, ...numberArray1, ...stringArray1].join(''));
+    console.log('variableArray1 =',
+                [functionScoped, blockScoped, constant1, ...numberArray1, ...stringArray1].join(
+                    ''));
 
-    return(
+    return (
         <div>
             <h2>Working with Arrays</h2>
             numberArray1 = {numberArray1.join('')}<br/>
             stringArray1 = {stringArray1.join('')}<br/>
-            variableArray1 = {[functionScoped, blockScoped, constant1, ...numberArray1, ...stringArray1].join('')}<br/>
+            variableArray1 = {[functionScoped, blockScoped, constant1, ...numberArray1,
+                               ...stringArray1].join('')}<br/>
             <ArrayIndexAndLength/>
             <AddingAndRemovingDataToFromArrays/>
             <ForLoops/>

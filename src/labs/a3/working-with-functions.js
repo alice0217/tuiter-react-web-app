@@ -4,7 +4,7 @@ import ImpliedReturn from "./implied-return";
 import FunctionParenthesisAndParameter from "./function-parenthesis-and-parameter";
 
 function WorkingWithFunctions() {
-    return(
+    return (
         <div>
             <ES5Function/>
             <ArrowFunctions/>

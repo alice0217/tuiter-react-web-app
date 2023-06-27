@@ -1,7 +1,7 @@
 import Nav from "../../nav";
 
 function HelloWorld() {
-    return(
+    return (
         <div>
             <Nav/>
             <h1>Hello World!</h1>

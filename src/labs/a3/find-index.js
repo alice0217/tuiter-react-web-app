@@ -8,7 +8,7 @@ function FindIndex() {
     console.log('FindIndex function');
     console.log('fourIndex = ', fourIndex);
     console.log('string3Index = ', string3Index);
-    return(
+    return (
         <div>
             <h3>FindIndex function</h3>
             fourIndex = {fourIndex}<br/>

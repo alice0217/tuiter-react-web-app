@@ -1,10 +1,10 @@
 import Assignment3 from "./a3";
 import Assignment4 from "./a4";
 import Nav from "../nav";
-import {Routes, Route} from "react-router";
+import {Route, Routes} from "react-router";
 
 function Labs() {
-    return(
+    return (
         <div>
             <Nav/>
             <Routes>
@@ -14,4 +14,5 @@ function Labs() {
         </div>
     )
 }
+
 export default Labs;

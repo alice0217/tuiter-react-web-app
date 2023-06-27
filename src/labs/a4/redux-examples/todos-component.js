@@ -59,8 +59,9 @@ const Todos = () => {
                                               className={"btn"
                                                          + " btn-danger float-end ms-2"}>Delete
                                       </button>
-                                      <input type={"checkbox"} className={"me-2"} checked={todo.done}
-                                      onChange={() => toggleTodoDone(todo)}/>
+                                      <input type={"checkbox"} className={"me-2"}
+                                             checked={todo.done}
+                                             onChange={() => toggleTodoDone(todo)}/>
                                       {todo.do}
                                   </li>)
                 }

@@ -15,18 +15,23 @@ const Styles = () => {
         ...colorBlack,
         ...padding10px
     };
-    return(
+    return (
         <div>
             <h2>Styles</h2>
             {/*React.js accepts a JSON object where the properties are CSS properties and values
              are CSS values */}
-            <div style={{ "backgroundColor": "lightyellow",
-                "color": "black", padding: "10px" }}>
-                Yellow background</div>
-            <div style={ bgRed }>
-                Red background</div>
-            <div style={ bgBlue }>
-                Blue background</div>
+            <div style={{
+                "backgroundColor": "lightyellow",
+                "color": "black", padding: "10px"
+            }}>
+                Yellow background
+            </div>
+            <div style={bgRed}>
+                Red background
+            </div>
+            <div style={bgBlue}>
+                Blue background
+            </div>
         </div>
     );
 };

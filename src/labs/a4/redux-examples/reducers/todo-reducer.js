@@ -33,7 +33,8 @@ const todosSlice = createSlice({
                                            // find takes a predicate
                                            // find the todo-item whose id is the same as the
                                            //  action object id
-                                           const todo = state.find((todo) => todo._id === action.payload._id);
+                                           const todo = state.find(
+                                               (todo) => todo._id === action.payload._id);
                                            todo.done = !todo.done; // become the opposite of
                                            // what done was
                                        }

@@ -7,19 +7,26 @@ function RegisterScreen() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [handle, setHandle] = useState("");
-    const [image, setImage] = useState("");
+    // const [image, setImage] = useState("");
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
     const handleRegister = async () => {
-        if (!firstName || !lastName || !username || !password || !handle || !image) {
-            alert("Please fill in all fields and select an image.");
+        if (!firstName || !lastName || !username || !password || !handle) {
+            alert("Please fill in all fields.");
             return;
         }
         try {
-            await dispatch(registerThunk({firstName, lastName, username, password, handle, image}));
+            await dispatch(registerThunk({
+                                             firstName: firstName,
+                                             lastName: lastName,
+                                             username: username,
+                                             password: password,
+                                             handle: handle,
+                                             image: "/images/placeholder.jpg"
+                                         }));
             navigate("/tuiter/profile");
         } catch (e) {
             alert(e);
@@ -53,24 +60,6 @@ function RegisterScreen() {
                 <label>Handle</label>
                 <input className={"form-control"} type={"text"} value={handle}
                        onChange={(event) => setHandle(event.target.value)}/>
-            </div>
-            <div className={"mt-2"}>
-                <label>Image</label>
-                <input type="file" className="form-control" id="file-upload" accept="image/*"
-                       onChange={(event) => {
-                           const image = event.target.files[0];
-                           const reader = new FileReader();
-                           reader.readAsDataURL(image);
-                           // reader.addEventListener("load", () => {
-                           // localStorage.setItem("icon", reader.result);
-                           // setImage("");
-                           // setImage(reader.result+"");
-                           // })
-                           // console.log(reader.result);
-                           setImage("/images/spacex.png");
-                           // setImage(reader.result + "");
-                       }
-                       }/>
             </div>
             <button className={"btn btn-primary mt-2"} onClick={handleRegister}>Register</button>
 

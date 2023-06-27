@@ -11,12 +11,12 @@ function AddingAndRemovingDataToFromArrays() {
     console.log('Add and remove data to arrays');
     console.log('numberArray1 = ', numberArray1.join(''));
     console.log('stringArray1 = ', stringArray1.join(''));
-    return(
-      <div>
-          <h3>Add and remove data to arrays</h3>
-          numberArray1 = {numberArray1.join('')}<br/>
-          stringArray1 = {stringArray1.join('')}
-      </div>
+    return (
+        <div>
+            <h3>Add and remove data to arrays</h3>
+            numberArray1 = {numberArray1.join('')}<br/>
+            stringArray1 = {stringArray1.join('')}
+        </div>
     );
 }
 

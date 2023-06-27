@@ -25,21 +25,20 @@ const WhatsHappening = () => {
         }
     }, []);
 
-    const tuitClickHandler = () => {
+    const tuitClickHandler = async () => {
         if (!currentUser) {
             alert("You need to log in first to make a tuit.");
         }
         const newTuit = {
-            _id: (new Date()).getTime() + "",
             topic: topic,
-            time: currentUser.time,
-            title: title,
             username: currentUser.username,
             handle: currentUser.handle,
-            tuit: whatsHappening,
+            time: currentUser.time,
             image: currentUser.image,
+            title: title,
+            tuit: whatsHappening,
         };
-        dispatch(createTuitThunk(newTuit));
+        await dispatch(createTuitThunk(newTuit));
         setTopic("");
         setTitle("");
         setWhatsHappening("")
@@ -48,7 +47,7 @@ const WhatsHappening = () => {
     return (
         <div className={"row"}>
             <div className={"col-auto"}>
-                <img src={currentUser ? currentUser.image : "/images/placeholder.jpg"}
+                <img src={currentUser.image}
                      style={{display: "block"}} width={60} height={60}
                      className={"rounded-circle"}/>
             </div>

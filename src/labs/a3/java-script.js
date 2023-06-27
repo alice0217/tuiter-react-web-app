@@ -1,5 +1,4 @@
-import VariablesAndConstants
-    from "./variables-and-constants";
+import VariablesAndConstants from "./variables-and-constants";
 import VariableTypes from "./variable-types";
 import BooleanVariables from "./boolean-variables";
 import IfElse from "./if-else";
@@ -14,7 +13,7 @@ import FunctionDestructing from "./function-destructing";
 
 function JavaScript() {
     console.log('Hello World!');
-    return(
+    return (
         <div>
             <h1>JavaScript</h1>
             <VariablesAndConstants/>
@@ -32,4 +31,5 @@ function JavaScript() {
         </div>
     );
 }
+
 export default JavaScript

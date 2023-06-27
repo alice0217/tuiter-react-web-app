@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import TuitsList from "../tuits";
 import WhatsHappening from "./whats-happening";
 

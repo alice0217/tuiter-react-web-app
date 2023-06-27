@@ -11,8 +11,8 @@ const TuitSummaryList = () => {
         <ul className="list-group">
             {
                 tuits.map(tuit => tuit.explored &&
-                              <TuitSummaryItem
-                                  key={tuit._id} tuit={tuit}/>)
+                                  <TuitSummaryItem
+                                      key={tuit._id} tuit={tuit}/>)
             }
         </ul>
     );

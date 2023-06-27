@@ -15,7 +15,7 @@ function TemplateLiterals() {
     const greeting2 = `Logged in: ${loggedIn ? "Yes" : "No"}`;
     console.log(greeting2)
 
-    return(
+    return (
         <div>
             <h2>Template Literals</h2>
             result1 = {result1}<br/>

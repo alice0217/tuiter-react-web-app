@@ -9,7 +9,7 @@ function ForLoops() {
     console.log('Looping through arrays');
     console.log('stringArray2 = ', stringArray2.join(''));
 
-    return(
+    return (
         <div>
             <h3>Looping through arrays</h3>
             stringArray2 = {stringArray2.join('')}

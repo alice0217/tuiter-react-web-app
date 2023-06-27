@@ -12,20 +12,20 @@ import {Navigate, Route, Routes} from "react-router";
 function App() {
     return (
         <BrowserRouter>
-                <div className="container">
-                    <Routes>
-                        {/*Default landing screen*/}
-                        <Route path="/"
-                               element={
-                                   <Navigate to="/labs/a3"/>}/>
-                        <Route path="/labs/*"
-                               element={<Labs/>}/>
-                        <Route path="/hello"
-                               element={<HelloWorld/>}/>
-                        <Route path="/tuiter/*"
-                               element={<Tuiter/>}/>
-                    </Routes>
-                </div>
+            <div className="container">
+                <Routes>
+                    {/*Default landing screen*/}
+                    <Route path="/"
+                           element={
+                               <Navigate to="/labs/a3"/>}/>
+                    <Route path="/labs/*"
+                           element={<Labs/>}/>
+                    <Route path="/hello"
+                           element={<HelloWorld/>}/>
+                    <Route path="/tuiter/*"
+                           element={<Tuiter/>}/>
+                </Routes>
+            </div>
         </BrowserRouter>
     );
 }

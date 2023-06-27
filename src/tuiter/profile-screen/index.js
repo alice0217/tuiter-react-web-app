@@ -4,7 +4,7 @@ import {useNavigate} from "react-router";
 import {logoutThunk, profileThunk, updateUserThunk} from "../services/auth-thunks";
 
 function ProfileScreen() {
-    const currentUser = useSelector((state) => state.user);
+    const {currentUser} = useSelector((state) => state.user);
     const [profile, setProfile] = useState(currentUser);
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -22,8 +22,9 @@ function ProfileScreen() {
             const {payload} = await dispatch(profileThunk());
             setProfile(payload);
         }
+
         fetchData();
-    },[dispatch]);
+    }, [dispatch]);
 
     return (
         <div>

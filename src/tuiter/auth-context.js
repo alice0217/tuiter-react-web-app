@@ -7,7 +7,7 @@ function AuthContext({children}) { // children is the content in the body of thi
     const [loading, setLoading] = useState(true);
     const dispatch = useDispatch();
     useEffect(() => {
-        const load = async() => {
+        const load = async () => {
             await dispatch(profileThunk());
             setLoading(false);
         };
@@ -17,7 +17,7 @@ function AuthContext({children}) { // children is the content in the body of thi
     if (loading) {
         return (
             <div className={"spinner-border"} role={"status"}>
-              <span className={"visually-hidden"}>Loading...</span>
+                <span className={"visually-hidden"}>Loading...</span>
             </div>
         );
     } else {

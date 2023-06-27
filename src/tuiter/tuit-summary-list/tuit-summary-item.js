@@ -19,13 +19,13 @@ const TuitSummaryItem = (
         }
     }
 ) => {
-    return(
+    return (
         <li className="list-group-item">
             <div className="row">
                 <div className="col-10">
                     <div>{tuit.username}&nbsp;
                         <GoVerified/>&nbsp;·&nbsp;
-                         {tuit.time}</div>
+                        {tuit.time}</div>
                     <div className="fw-bolder">{tuit.topic}</div>
                     <div>{tuit.title}</div>
                 </div>

@@ -5,7 +5,7 @@
 import React from "react";
 import {Link, useLocation} from "react-router-dom";
 import {AiFillHome, AiFillMinusCircle, AiOutlineUnorderedList} from 'react-icons/ai';
-import {FaBell, FaBookmark, FaEnvelope, FaHashtag, FaTwitter, FaRegistered} from "react-icons/fa";
+import {FaBell, FaBookmark, FaEnvelope, FaHashtag, FaRegistered, FaTwitter} from "react-icons/fa";
 
 import {FiLogIn} from "react-icons/fi";
 import {BsFillPersonFill} from "react-icons/bs";
@@ -42,7 +42,7 @@ const NavigationSidebar = () => {
                 </div>
             </Link>}
             {!currentUser && <Link className={"list-group-item"}
-                                    to={"/tuiter/register"}>
+                                   to={"/tuiter/register"}>
                 <div className="d-flex align-items-center">
                     <FaRegistered/>{/* Render the icon component */}
                     &nbsp;
@@ -50,7 +50,7 @@ const NavigationSidebar = () => {
                 </div>
             </Link>}
             {currentUser && <Link className={"list-group-item"}
-                                   to={"/tuiter/profile"}>
+                                  to={"/tuiter/profile"}>
                 <div className="d-flex align-items-center">
                     <BsFillPersonFill/>{/* Render the icon component */}
                     &nbsp;

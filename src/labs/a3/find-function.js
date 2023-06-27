@@ -7,7 +7,7 @@ function FindFunction() {
     console.log('four = ', four);
     console.log('string3 = ', string3);
 
-    return(
+    return (
         <div>
             <h3>Find function</h3>
             four = {four}<br/>

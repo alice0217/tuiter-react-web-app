@@ -5,7 +5,7 @@ const USERS_URL = `${SERVER_API_URL}/api/users`;
 
 const api = axios.create({withCredentials: true});
 
-export const login = async({username, password}) => {
+export const login = async ({username, password}) => {
     const response = await api.post(`${USERS_URL}/login`, {username, password});
     return response.data;
 };
@@ -34,12 +34,12 @@ export const register = async ({
                                    image,
                                }) => {
     const response = await api.post(`${USERS_URL}/register`, {
-            firstName,
-            lastName,
-            username,
-            password,
-            handle,
-            image,
-        });
+        firstName,
+        lastName,
+        username,
+        password,
+        handle,
+        image,
+    });
     return response.data;
 };

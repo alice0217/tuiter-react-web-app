@@ -2,7 +2,7 @@ import React from "react";
 import {SlBubble} from "react-icons/sl";
 import {FiHeart, FiRepeat} from "react-icons/fi";
 import {FaHeart} from "react-icons/fa";
-import {BsShare, BsHandThumbsDownFill, BsHandThumbsDown} from "react-icons/bs";
+import {BsHandThumbsDown, BsHandThumbsDownFill, BsShare} from "react-icons/bs";
 
 import {useDispatch} from "react-redux";
 import {updateTuitThunk} from "../services/tuits-thunks";
@@ -45,9 +45,13 @@ const TuitStats = ({tuit}) => {
                     // if the tuit was already disliked, then clicking thumbs down means remove
                     // a dislike
                 }} onClick={() => tuit.disliked ? dispatch(
-                    updateTuitThunk({...tuit, disliked: false, dislikes: tuit.dislikes - 1})) : dispatch(updateTuitThunk(
-                                      {...tuit, disliked: true, dislikes: tuit.dislikes + 1}))}>{tuit.disliked ?
-                                                                                        <BsHandThumbsDownFill style={{color: "#E0245E"}}/> : <BsHandThumbsDown/>}</button>
+                                                    updateTuitThunk({...tuit, disliked: false, dislikes: tuit.dislikes - 1}))
+                                                : dispatch(updateTuitThunk(
+                        {...tuit, disliked: true, dislikes: tuit.dislikes + 1}))}>{tuit.disliked ?
+                                                                                   <BsHandThumbsDownFill
+                                                                                       style={{color: "#E0245E"}}/>
+                                                                                                 :
+                                                                                   <BsHandThumbsDown/>}</button>
                 &nbsp;&nbsp;{tuit.dislikes}
             </div>
             <div className={"col-2"}>

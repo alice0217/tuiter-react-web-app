@@ -31,7 +31,7 @@ export const updateUserThunk = createAsyncThunk(
 )
 
 export const registerThunk = createAsyncThunk(
-    "auth/register", async ({
+    "user/register", async ({
                                 firstName,
                                 lastName,
                                 username,

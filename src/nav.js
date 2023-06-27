@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
+
 function Nav() {
     return (
         <nav className="nav nav-tabs mb-2">
@@ -9,4 +10,5 @@ function Nav() {
         </nav>
     );
 }
+
 export default Nav;

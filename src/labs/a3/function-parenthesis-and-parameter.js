@@ -3,7 +3,7 @@ function FunctionParenthesisAndParameter() {
     const plusOne = a => a + 1;
     const twoSquared = square(2);
     const threePlusOne = plusOne(3);
-    return(
+    return (
         <div>
             <h3>Parenthesis and parameters</h3>
             twoSquared = {twoSquared} <br/>

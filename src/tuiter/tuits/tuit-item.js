@@ -2,15 +2,13 @@ import React from "react";
 import {GoVerified} from "react-icons/go";
 import TuitStats from "./tuit-stats";
 
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 // import {deleteTuit} from "../reducers/tuits-reducer";
 import {deleteTuitThunk} from "../services/tuits-thunks";
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const TuitItem = ({tuit}) => {
     const dispatch = useDispatch();
-    const loggedInUser = localStorage.getItem("user");
-    const parsedLoggedInUser = JSON.parse(loggedInUser);
     const deleteTuitHandler = (id) => {
         dispatch(deleteTuitThunk(id));
     }
@@ -21,18 +19,23 @@ const TuitItem = ({tuit}) => {
                  picture*/}
                     <img width={50} height={50} className={"float-end rounded-circle"
                                                            + " shadow-0-5-5-0"}
-                         src={parsedLoggedInUser && tuit.handle===parsedLoggedInUser.handle ? localStorage.getItem("icon") : tuit.image} style={{"color": "lightgray", "boxShadow": "0px 5px"
-                                                                                       + " 5px 0px"}}/>
+                         src={tuit.image} style={{
+                        "color": "lightgray", "boxShadow": "0px 5px"
+                                                           + " 5px 0px"
+                    }}/>
                 </div>
                 <div className={"col-10"}> {/*tuit content*/}
                     {/*text*/}
                     <div>
                         <i className="fa-solid fa-xmark float-end"
-                                 onClick={() => deleteTuitHandler(tuit._id)} style={{cursor: "pointer"}}></i>
+                           onClick={() => deleteTuitHandler(tuit._id)}
+                           style={{cursor: "pointer"}}></i>
                         <span>{tuit.username}&nbsp;
-                            <GoVerified style={{"color": "#0D6EFD"}}/>&nbsp;{tuit.handle}&nbsp;·&nbsp;{tuit.time}</span><br/>
+                            <GoVerified
+                                style={{"color": "#0D6EFD"}}/>&nbsp;{tuit.handle}&nbsp;·&nbsp;{tuit.time}</span><br/>
                         <span>{tuit.tuit}</span>
-                    </div><br/>
+                    </div>
+                    <br/>
                     {/*icons and stats*/}
                     <TuitStats tuit={tuit}/>
                 </div>
